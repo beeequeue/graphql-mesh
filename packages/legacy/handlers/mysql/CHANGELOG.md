@@ -1,5 +1,13 @@
 # @graphql-mesh/mysql
 
+## 0.99.2
+
+### Patch Changes
+
+- Updated dependencies
+  [[`bdefa6f`](https://github.com/ardatan/graphql-mesh/commit/bdefa6ff98a1b67ee7458e9ed233f261f523baae)]:
+  - @omnigraph/mysql@0.3.2
+
 ## 0.99.1
 
 ### Patch Changes

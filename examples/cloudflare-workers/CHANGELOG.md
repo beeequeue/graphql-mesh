@@ -1,5 +1,12 @@
 # cloudflare-workers
 
+## 0.12.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @graphql-mesh/json-schema@0.101.3
+
 ## 0.12.2
 
 ### Patch Changes

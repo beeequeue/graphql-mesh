@@ -1,5 +1,90 @@
 # @graphql-mesh/serve-runtime
 
+## 0.4.5
+
+### Patch Changes
+
+- [#7223](https://github.com/ardatan/graphql-mesh/pull/7223)
+  [`26549a9`](https://github.com/ardatan/graphql-mesh/commit/26549a9832b4e18afdb22e4615a9951d69a5922b)
+  Thanks [@ardatan](https://github.com/ardatan)! - dependencies updates:
+
+  - Updated dependency
+    [`@graphql-tools/executor-http@^1.1.2` ↗︎](https://www.npmjs.com/package/@graphql-tools/executor-http/v/1.1.2)
+    (from `^1.0.6`, in `dependencies`)
+
+- [#7177](https://github.com/ardatan/graphql-mesh/pull/7177)
+  [`7b35444`](https://github.com/ardatan/graphql-mesh/commit/7b35444dcc15c6d22eb1b26c080c7b78ee8aef8e)
+  Thanks [@ardatan](https://github.com/ardatan)! - Disable validation of the operations on the
+  gateway while using Mesh Server as a proxy
+
+  ```ts filename="mesh.config.ts"
+  import { defineConfig as defineServeConfig } from '@graphql-mesh/serve-cli'
+
+  export default defineServeConfig({
+    proxy: {
+      endpoint: 'https://my-service.com/graphql'
+    },
+    skipValidation: true
+  })
+  ```
+
+  This will disable the validation of the operations, and send the operations directly to the
+  upstream service.
+
+- [#7216](https://github.com/ardatan/graphql-mesh/pull/7216)
+  [`a2306d2`](https://github.com/ardatan/graphql-mesh/commit/a2306d2c53c9d3cf071aec6e550dc5fff976bfb2)
+  Thanks [@enisdenjo](https://github.com/enisdenjo)! - Invoke onSchemaChange plugin hook as soon as
+  supergraph changes and schema setting optimizations
+
+- [#7215](https://github.com/ardatan/graphql-mesh/pull/7215)
+  [`eefbfbe`](https://github.com/ardatan/graphql-mesh/commit/eefbfbe94d72fa6f5cf60a8cf363cae039aece89)
+  Thanks [@ardatan](https://github.com/ardatan)! - Cleanup created transport executors per schema
+  change Previously they were cleaned up only on server close, which could lead to memory leaks in
+  case of schema changes.
+
+- [#7220](https://github.com/ardatan/graphql-mesh/pull/7220)
+  [`de7517e`](https://github.com/ardatan/graphql-mesh/commit/de7517e653babaeabbd80a941a0210c491601725)
+  Thanks [@enisdenjo](https://github.com/enisdenjo)! - Close subscriptions on disposal and schema
+  change with different codes.
+
+  When the server gets disposed (on shutdown), all active subscriptions will complete emitting the
+  following execution error:
+
+  ```json
+  {
+    "errors": [
+      {
+        "extensions": {
+          "code": "SHUTTING_DOWN"
+        },
+        "message": "subscription has been closed because the server is shutting down"
+      }
+    ]
+  }
+  ```
+
+  However, when the server detects a schema change, all active subscriptions will complete emitting
+  the following execution error:
+
+  ```json
+  {
+    "errors": [
+      {
+        "extensions": {
+          "code": "SUBSCRIPTION_SCHEMA_RELOAD"
+        },
+        "message": "subscription has been closed due to a schema reload"
+      }
+    ]
+  }
+  ```
+
+- Updated dependencies
+  [[`26549a9`](https://github.com/ardatan/graphql-mesh/commit/26549a9832b4e18afdb22e4615a9951d69a5922b),
+  [`eefbfbe`](https://github.com/ardatan/graphql-mesh/commit/eefbfbe94d72fa6f5cf60a8cf363cae039aece89)]:
+  - @graphql-mesh/transport-http@0.2.2
+  - @graphql-mesh/fusion-runtime@0.4.2
+
 ## 0.4.4
 
 ### Patch Changes

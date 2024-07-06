@@ -1,6 +1,6 @@
 {
   "name": "@v1-next/example-fastify",
-  "version": "0.12.5",
+  "version": "0.12.6",
   "private": true,
   "scripts": {
     "compose": "node ../../../../packages/compose-cli/dist/cjs/bin.js > supergraph.graphql",
@@ -8,8 +8,8 @@
   },
   "dependencies": {
     "@graphql-mesh/compose-cli": "^0.4.2",
-    "@graphql-mesh/serve-runtime": "^0.4.4",
-    "@omnigraph/openapi": "^0.101.2",
+    "@graphql-mesh/serve-runtime": "^0.4.5",
+    "@omnigraph/openapi": "^0.101.3",
     "fastify": "^4.26.0",
     "graphql": "16.9.0",
     "ts-node": "^10.9.2",

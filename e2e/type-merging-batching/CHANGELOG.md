@@ -5,6 +5,15 @@
 ### Patch Changes
 
 - Updated dependencies
+  [[`eefbfbe`](https://github.com/ardatan/graphql-mesh/commit/eefbfbe94d72fa6f5cf60a8cf363cae039aece89)]:
+  - @graphql-mesh/fusion-runtime@0.4.2
+  - @graphql-mesh/serve-cli@0.6.5
+
+## null
+
+### Patch Changes
+
+- Updated dependencies
   [[`0d916a4`](https://github.com/ardatan/graphql-mesh/commit/0d916a4b4603ca57a383337f42c51ef8d5f4ae3d),
   [`8a04cf7`](https://github.com/ardatan/graphql-mesh/commit/8a04cf7abff41122d5268c57acfb26e97712730b),
   [`0d916a4`](https://github.com/ardatan/graphql-mesh/commit/0d916a4b4603ca57a383337f42c51ef8d5f4ae3d),

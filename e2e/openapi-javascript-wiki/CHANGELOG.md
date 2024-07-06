@@ -5,6 +5,14 @@
 ### Patch Changes
 
 - Updated dependencies []:
+  - @graphql-mesh/serve-cli@0.6.5
+  - @omnigraph/openapi@0.101.3
+
+## null
+
+### Patch Changes
+
+- Updated dependencies []:
   - @omnigraph/openapi@0.101.2
 
 ## null

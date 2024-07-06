@@ -1,5 +1,15 @@
 # @graphql-mesh/fusion-runtime
 
+## 0.4.2
+
+### Patch Changes
+
+- [#7215](https://github.com/ardatan/graphql-mesh/pull/7215)
+  [`eefbfbe`](https://github.com/ardatan/graphql-mesh/commit/eefbfbe94d72fa6f5cf60a8cf363cae039aece89)
+  Thanks [@ardatan](https://github.com/ardatan)! - Cleanup created transport executors per schema
+  change Previously they were cleaned up only on server close, which could lead to memory leaks in
+  case of schema changes.
+
 ## 0.4.1
 
 ### Patch Changes

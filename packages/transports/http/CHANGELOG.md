@@ -1,5 +1,16 @@
 # @graphql-mesh/transport-http
 
+## 0.2.2
+
+### Patch Changes
+
+- [#7223](https://github.com/ardatan/graphql-mesh/pull/7223)
+  [`26549a9`](https://github.com/ardatan/graphql-mesh/commit/26549a9832b4e18afdb22e4615a9951d69a5922b)
+  Thanks [@ardatan](https://github.com/ardatan)! - dependencies updates:
+  - Updated dependency
+    [`@graphql-tools/executor-http@^1.1.2` ↗︎](https://www.npmjs.com/package/@graphql-tools/executor-http/v/1.1.2)
+    (from `^1.0.6`, in `dependencies`)
+
 ## 0.2.1
 
 ### Patch Changes
