@@ -6,7 +6,7 @@ export interface RESTTransportOptions {
   queryParams?: Record<string, string>;
 }
 
-export default {
+export const restTransport = {
   getSubgraphExecutor({ transportEntry, subgraph, fetch, pubsub, logger }) {
     const processDirectiveOpts: ProcessDirectiveArgs = {
       globalFetch: fetch,
@@ -23,3 +23,5 @@ export default {
 export { processDirectives } from './directives/process.js';
 export type { ProcessDirectiveArgs } from './directives/process.js';
 export { processScalarType } from './directives/scalars.js';
+
+export default restTransport;

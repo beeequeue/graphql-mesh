@@ -5,8 +5,10 @@ export { getThriftExecutor };
 
 export * from './types.js';
 
-export default {
+export const thriftTransport = {
   getSubgraphExecutor({ subgraph }) {
     return getThriftExecutor(subgraph);
   },
 } satisfies Transport;
+
+export default thriftTransport;

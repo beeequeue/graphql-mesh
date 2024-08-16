@@ -5,7 +5,7 @@ export interface SQLiteTransportOptions {
   type: 'infile' | 'db';
 }
 
-export default {
+export const sqliteTransport = {
   getSubgraphExecutor({ cwd, transportEntry }) {
     const loaderOpts: GraphQLSQLiteLoaderOpts = { cwd };
     if (transportEntry.options.type === 'infile') {
@@ -16,3 +16,5 @@ export default {
     return loadGraphQLSchemaFromOptions(loaderOpts).then(schema => createDefaultExecutor(schema));
   },
 } satisfies Transport<SQLiteTransportOptions>;
+
+export default sqliteTransport;

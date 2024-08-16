@@ -3,7 +3,7 @@ import { createExecutorFromSchemaAST } from './executor.js';
 
 export { createExecutorFromSchemaAST } from './executor.js';
 
-export default {
+export const soapTransport = {
   getSubgraphExecutor({ transportEntry, subgraph, fetch }) {
     let headers: Record<string, string> | undefined;
     if (typeof transportEntry.headers === 'string') {
@@ -15,3 +15,5 @@ export default {
     return createExecutorFromSchemaAST(subgraph, fetch, headers);
   },
 } satisfies Transport;
+
+export default soapTransport;

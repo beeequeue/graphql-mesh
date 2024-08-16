@@ -6,7 +6,7 @@ export * from './driver.js';
 export * from './eventEmitterForPubSub.js';
 export * from './executor.js';
 
-export default {
+export const neo4jTransport = {
   getSubgraphExecutor({ subgraph, pubsub, logger }) {
     return getNeo4JExecutor({
       schema: subgraph,
@@ -15,3 +15,5 @@ export default {
     });
   },
 } satisfies Transport;
+
+export default neo4jTransport;

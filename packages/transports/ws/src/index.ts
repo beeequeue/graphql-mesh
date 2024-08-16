@@ -23,7 +23,7 @@ export type WSTransportOptions = Omit<ClientOptions, 'url' | 'on' | 'connectionP
   connectionParams?: Record<string, string>;
 };
 
-export default {
+export const wsTransport = {
   getSubgraphExecutor({ transportEntry, logger }) {
     const wsExecutorMap = new Map<string, DisposableExecutor>();
     const wsUrl = switchProtocols(transportEntry.location);
@@ -91,3 +91,5 @@ export default {
     );
   },
 } satisfies Transport<WSTransportOptions>;
+
+export default wsTransport;

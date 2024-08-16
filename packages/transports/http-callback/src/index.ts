@@ -61,7 +61,7 @@ function createTimeoutError() {
   });
 }
 
-export default {
+export const httpCallbackTransport = {
   getSubgraphExecutor({ transportEntry, fetch, pubsub, logger }): DisposableExecutor {
     let headersInConfig: Record<string, string> | undefined;
     if (typeof transportEntry.headers === 'string') {
@@ -273,3 +273,5 @@ export default {
     return makeDisposable(httpCallbackExecutor, disposeFn);
   },
 } satisfies Transport<HTTPCallbackTransportOptions>;
+
+export default httpCallbackTransport;

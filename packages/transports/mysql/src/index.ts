@@ -5,10 +5,12 @@ export * from './execution.js';
 export * from './parseEndpointUri.js';
 export * from './types.js';
 
-export default {
+export const mysqlTransport = {
   getSubgraphExecutor({ subgraph }) {
     return getMySQLExecutor({
       subgraph,
     });
   },
 } satisfies Transport;
+
+export default mysqlTransport;

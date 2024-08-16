@@ -17,7 +17,7 @@ export type HTTPTransportOptions<
   subscriptions?: TransportEntry<TSubscriptionTransportOptions>;
 };
 
-export default {
+export const httpTransport = {
   getSubgraphExecutor(payload) {
     let headersInConfig: Record<string, string> | undefined;
     if (typeof payload.transportEntry.headers === 'string') {
@@ -88,3 +88,5 @@ export default {
     return httpExecutor;
   },
 } satisfies Transport;
+
+export default httpTransport;
